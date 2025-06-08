@@ -1,18 +1,18 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { onCLS, onLCP, onFCP, onTTFB } from "web-vitals";
+// import { onCLS, onLCP, onFCP, onTTFB, type Metric } from "web-vitals";
 
-function sendToAnalytics(metric: any) {
-  fetch("/api/analytics", {
-    method: "POST",
-    body: JSON.stringify(metric),
-    keepalive: true,
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
-}
+// function sendToAnalytics(metric: Metric) {
+//   fetch("/api/analytics", {
+//     method: "POST",
+//     body: JSON.stringify(metric),
+//     keepalive: true,
+//     headers: {
+//       "Content-Type": "application/json",
+//     },
+//   });
+// }
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -45,7 +45,7 @@ export default function RootLayout({
   );
 }
 
-onCLS(sendToAnalytics);
-onLCP(sendToAnalytics);
-onFCP(sendToAnalytics);
-onTTFB(sendToAnalytics);
+// onCLS(sendToAnalytics);
+// onLCP(sendToAnalytics);
+// onFCP(sendToAnalytics);
+// onTTFB(sendToAnalytics);
